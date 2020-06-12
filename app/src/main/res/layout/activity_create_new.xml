@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNewActivity"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    android:padding="20dp"
+    android:gravity="center"
+    >
+
+    <ProgressBar
+        android:id="@+id/theProgressbarID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/bossLinearLayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/uploadProjectID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#55000000"
+            android:onClick="uploadProjectButton"
+            android:text="Upload A Project"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
+
+
+        <Button
+            android:id="@+id/submitProblemID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#55000000"
+            android:onClick="submitProblemButton"
+            android:text="Submit Any Problem"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/uploadProjectLayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/bossLinearLayoutID"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/uTitleID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Title"
+                android:gravity="center"
+                />
+
+
+            <Spinner
+                android:id="@+id/uCategoryID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Category"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/uShortDescriptionID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Short Description"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/uDetailedDescriptionID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Detailed Description"
+                android:gravity="center"
+                />
+
+            <Button
+                android:id="@+id/uProgrammingLanguageBtnID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_shape"
+                android:text="Programming Language"
+                android:textAllCaps="false"
+                android:gravity="center"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:orientation="vertical"
+                >
+
+                <CheckBox
+                    android:id="@+id/cID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C / C++"/>
+
+                <CheckBox
+                    android:id="@+id/javaID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JAVA"/>
+
+                <CheckBox
+                    android:id="@+id/pythonID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Python"/>
+
+                <CheckBox
+                    android:id="@+id/rubiID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rubi"/>
+
+                <CheckBox
+                    android:id="@+id/kotlinID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kotlin"/>
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/uWebLanguageBtnID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_shape"
+                android:text="Web Language"
+                android:textAllCaps="false"
+                android:gravity="center"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/htmlID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HTML" />
+
+                <CheckBox
+                    android:id="@+id/cssID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CSS" />
+
+                <CheckBox
+                    android:id="@+id/phpID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHP" />
+
+                <CheckBox
+                    android:id="@+id/jsID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JS" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/uFrameworkBtnID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_shape"
+                android:text="Framework"
+                android:textAllCaps="false"
+                android:gravity="center"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:orientation="vertical"
+                >
+
+                <CheckBox
+                    android:id="@+id/androidID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Android"/>
+
+                <CheckBox
+                    android:id="@+id/iosID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="iOS"/>
+
+                <CheckBox
+                    android:id="@+id/springID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spring"/>
+
+                <CheckBox
+                    android:id="@+id/wordpressID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WordPress"/>
+
+                <CheckBox
+                    android:id="@+id/djangoID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Django"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/uDatabaseBtnID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_shape"
+                android:text="Database"
+                android:textAllCaps="false"
+                android:gravity="center"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:orientation="vertical"
+                >
+
+                <CheckBox
+                    android:id="@+id/mysqlID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MySQL"/>
+
+                <CheckBox
+                    android:id="@+id/sqliteID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SQLite"/>
+
+                <CheckBox
+                    android:id="@+id/firebaseID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FireBase"/>
+
+                <CheckBox
+                    android:id="@+id/oracleID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oracle"/>
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/uSubmitBtnID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:background="@drawable/round_corner_shape"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:onClick="UploadProjectSubmit"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/submitProblemLayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/bossLinearLayoutID"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/sTitleID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Title"
+                android:gravity="center"
+                />
+
+
+            <Spinner
+                android:id="@+id/sCategoryID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Category"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/sShortDescriptionID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Short Description"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/sDetailedDescriptionID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Detailed Description"
+                android:gravity="center"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="33dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/sHireDeveloperID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hire Developer             "/>
+
+
+                <RadioButton
+                    android:id="@+id/sBuyProjectID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy Project"/>
+
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/sSubmitBtnID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="33dp"
+                android:background="@drawable/round_corner_shape"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:onClick="SubmitProblem"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

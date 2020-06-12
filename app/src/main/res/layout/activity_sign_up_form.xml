@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpForm"
+    android:background="@drawable/background"
+    android:padding="20dp"
+    android:gravity="center"
+    >
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/theProgressbarID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up Form"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:textColor="#934B4B"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                />
+
+
+
+            <EditText
+                android:id="@+id/nameID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Full Name"
+                android:gravity="center"
+                />
+
+
+            <EditText
+                android:id="@+id/organizationID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="27dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Organisation"
+                android:gravity="center"
+                />
+
+
+
+
+
+            <RadioGroup
+                android:id="@+id/genderID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="27dp"
+                android:gravity="center"
+                >
+                <RadioButton
+                    android:id="@+id/maleRbID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male             "
+                    />
+                <RadioButton
+                    android:id="@+id/femaleRbID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+                    />
+            </RadioGroup>
+
+
+            <EditText
+                android:id="@+id/ageID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="number"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Age"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/eduDegreeID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="text"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Educational Degree / Occupation"
+                android:gravity="center"
+                />
+
+
+
+            <Spinner
+                android:id="@+id/countryID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Educational Degree"
+                android:gravity="center"
+                />
+
+
+            <EditText
+                android:id="@+id/skypeIdID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textUri"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Skype ID"
+                android:gravity="center"
+                />
+
+
+            <EditText
+                android:id="@+id/gitProfileID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textUri"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:background="@drawable/round_corner_shape"
+                android:hint="GitHub Profile Link"
+                android:gravity="center"
+                />
+
+
+            <EditText
+                android:id="@+id/emailID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:background="@drawable/round_corner_shape"
+                android:hint="E-mail"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/passwordID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textPassword"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Password"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/confPasswordID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:inputType="textPassword"
+                android:layout_marginBottom="33dp"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:background="@drawable/round_corner_shape"
+                android:hint="Confirm Password"
+                android:gravity="center" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_shape"
+                    android:text="Submit"
+                    android:onClick="SignUp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

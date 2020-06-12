@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnnoderProfile"
+    android:background="@drawable/background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/profile_cover"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:id="@+id/userProPic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_pic"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="110dp"
+                >
+
+                <TextView
+                    android:id="@+id/userNameID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Afnanul Hassan"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/userEduDegreeID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="B.Sc. in CSE"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/userOrganizationID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Daffodil International University"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/chat_icon"
+            android:layout_margin="10dp"
+            android:onClick="GoToMessage"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="See Personal Details"
+                android:onClick="openDetails"
+                android:textAllCaps="false"
+                />
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="See Contract Details"
+                android:onClick="openDetails"
+                android:textAllCaps="false"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:weightSum="2"
+            >
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/personalDetailsID"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userAgeID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age: 23"
+                    android:textColor="#000000"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/userGenderID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender: Male"
+                    android:textColor="#000000"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/userCountryID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Country: Bangladesh"
+                    android:textColor="#000000"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/contractDetailsID"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userEmailID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="afnanulcoder@gmail.com"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:textIsSelectable="true"
+                    />
+
+                <TextView
+                    android:id="@+id/userSkypeID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Skype: Afnanul Hassan"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:textIsSelectable="true"/>
+
+                <TextView
+                    android:id="@+id/userGithubID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="github: github.com/AfnanulCoder"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:textIsSelectable="true"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number Of Projects"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/userNumberOfProjectsID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="13"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number Of Problems"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/userNumberOfProblemsID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Projects:"
+            android:gravity="start"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <ListView
+            android:id="@+id/userProjectsListViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:divider="#00000000"
+            android:dividerHeight="8dp"
+            android:paddingRight="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Problems:"
+            android:gravity="start"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <ListView
+            android:id="@+id/userProblemsListViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:divider="#00000000"
+            android:dividerHeight="8dp"
+            android:paddingRight="10dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProjectsDetailsView"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:background="@color/cardview_dark_background"
+        android:weightSum="7"
+        />
+
+    <TextView
+        android:id="@+id/theProjectTitleID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Smart Lock Using Image Recognition"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/theProjectCategoryID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer Vision"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/theProjectUploaderID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uploaded By: Afnanul Hassan"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:layout_margin="5dp"
+        />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:src="@drawable/soja_line"
+        android:layout_margin="10dp"
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/theProjectLongID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User just have to register face with proper authentication. Then The lock itself will recognise the resistered users face to be unlocked. Otherwise it will remain locked."
+                android:textColor="#99000000"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:weightSum="4"
+                >
+
+                <TextView
+                    android:id="@+id/theProjectProgrammingID"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Tags:"
+                    android:gravity="center"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/theProjectTagID"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:text="Uploaded By: Afnanul Hassan"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"
+                    />
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go To Developer Profile"
+                android:textAllCaps="false"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/round_corner_shape"
+                android:onClick="GoToProfile"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

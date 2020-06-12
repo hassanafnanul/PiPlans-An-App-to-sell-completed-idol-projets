@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "385621288725",
+    "firebase_url": "https://piplans.firebaseio.com",
+    "project_id": "piplans",
+    "storage_bucket": "piplans.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385621288725:android:2a340cb1c6a618e9916b1c",
+        "android_client_info": {
+          "package_name": "com.afnanulcoder.piplans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385621288725-b6gdptme1bu448e7k5d3jjeqvg1b5bq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.afnanulcoder.piplans",
+            "certificate_hash": "70301d480df942bd47b3f3ce2f3adf17cb08076a"
+          }
+        },
+        {
+          "client_id": "385621288725-npmltlmomhc15i43m68cu8juh9qv7811.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJQaKNmqHGlKNMpKxK-uJ9-rzrWQOaA9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385621288725-npmltlmomhc15i43m68cu8juh9qv7811.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

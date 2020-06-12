@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="25dp"
+    android:background="@drawable/abstract_background"
+    >
+
+
+    <Button
+        android:id="@+id/goToProfileButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textSize="20sp"
+        android:text="Go To Profile"
+        android:textAllCaps="false"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:src="@drawable/soja_line"
+        />
+
+    <Button
+        android:id="@+id/settingsButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textSize="20sp"
+        android:text="Settings"
+        android:textAllCaps="false"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:src="@drawable/soja_line"
+        />
+
+
+    <Button
+        android:id="@+id/aboutButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textSize="20sp"
+        android:text="About"
+        android:textAllCaps="false"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:src="@drawable/soja_line"
+        />
+
+    <Button
+        android:id="@+id/logOutButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textSize="20sp"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        />
+
+
+</LinearLayout>
