@@ -30,6 +30,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
     SearchView searchSV;
+    ImageView msgReceivedIV;
+    boolean isMsgReceived = false;
 
 
 
@@ -37,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference, databaseReference1;
+    DatabaseReference databaseReference, databaseReference1, databaseReferenceForIsMsgReceived;
     //-----------------------------------------------
 
     private ListView projectsListView, problemsListView;
@@ -56,6 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         searchSV = findViewById(R.id.searchSvID);
+        msgReceivedIV = findViewById(R.id.msgReceivedID);
 
 
 
@@ -65,14 +68,41 @@ public class HomeActivity extends AppCompatActivity {
         projectDetails = new ProjectDetails();
         problemDetails = new ProblemDetails();
 
+        mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Projects");
         databaseReference1 = FirebaseDatabase.getInstance().getReference("Problems");
+        databaseReferenceForIsMsgReceived = FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("isMsgReceived");
 
         projectList = new ArrayList<>();
         problemList = new ArrayList<>();
 
         customAdapterForProject = new CustomAdapterForProject(HomeActivity.this, projectList);
         customAdapterForProblem = new CustomAdapterForProblem(HomeActivity.this, problemList);
+
+
+
+        //-----------------is any messageReceived Checker----------------------
+        databaseReferenceForIsMsgReceived.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                isMsgReceived = (boolean)dataSnapshot.getValue();
+
+                if (isMsgReceived)
+                {
+                    msgReceivedIV.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    msgReceivedIV.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -220,6 +250,12 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, CreateNewActivity.class));
     }
 
+    public void MsgReceived(View view)
+    {
+        //FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("isMsgReceived").setValue(false);
+    }
+
+
 
     @Override
     protected void onStart() {
@@ -272,4 +308,7 @@ public class HomeActivity extends AppCompatActivity {
 
         super.onStart();
     }
+
+
+
 }

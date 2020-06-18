@@ -146,7 +146,7 @@ public class SignUpForm extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    UserInformation userInformation = new UserInformation(fullName, organisation, gender, age, eduDegree, country, skype, gitHub, email, "0", "0");
+                    UserInformation userInformation = new UserInformation(fullName, organisation, gender, age, eduDegree, country, skype, gitHub, email, "0", "0", false);
 
                     FirebaseDatabase.getInstance().getReference("UserList")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

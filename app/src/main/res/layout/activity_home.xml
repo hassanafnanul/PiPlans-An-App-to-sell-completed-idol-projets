@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:background="@color/cardview_dark_background"
-        android:weightSum="7"
+        android:weightSum="8"
+        android:gravity="right"
         >
 
 
@@ -29,6 +30,19 @@
 
 
         </SearchView>
+
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/msgReceivedID"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/msg_received"
+            android:onClick="MsgReceived"
+            android:layout_alignParentRight="true"
+            android:layout_margin="3dp"
+            />
 
 
         <ImageView

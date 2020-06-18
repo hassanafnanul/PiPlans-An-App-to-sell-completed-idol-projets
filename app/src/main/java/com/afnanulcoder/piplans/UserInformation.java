@@ -3,11 +3,12 @@ package com.afnanulcoder.piplans;
 public class UserInformation
 {
     String fullName, organisation, gender, age, eduDegree, country, skype, gitHub, email, numberOfProjects, numberOfProblems;
+    boolean isMsgReceived;
 
     public UserInformation() {
     }
 
-    public UserInformation(String fullName, String organisation, String gender, String age, String eduDegree, String country, String skype, String gitHub, String email, String numberOfProjects, String numberOfProblems) {
+    public UserInformation(String fullName, String organisation, String gender, String age, String eduDegree, String country, String skype, String gitHub, String email, String numberOfProjects, String numberOfProblems, boolean isMsgReceived) {
         this.fullName = fullName;
         this.organisation = organisation;
         this.gender = gender;
@@ -19,7 +20,10 @@ public class UserInformation
         this.email = email;
         this.numberOfProjects = numberOfProjects;
         this.numberOfProblems = numberOfProblems;
+        this.isMsgReceived = isMsgReceived;
     }
+
+
 
     public String getFullName() {
         return fullName;
@@ -107,5 +111,13 @@ public class UserInformation
 
     public void setNumberOfProblems(String numberOfProblems) {
         this.numberOfProblems = numberOfProblems;
+    }
+
+    public boolean isMsgReceived() {
+        return isMsgReceived;
+    }
+
+    public void setMsgReceived(boolean msgReceived) {
+        isMsgReceived = msgReceived;
     }
 }

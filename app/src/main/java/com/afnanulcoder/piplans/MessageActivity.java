@@ -146,6 +146,8 @@ public class MessageActivity extends AppCompatActivity {
         {
             ChatDetails chatDetails = new ChatDetails(theSenderID, theSender, theRecieverID, theReceiver, theMessage);
 
+            FirebaseDatabase.getInstance().getReference("UserList").child(theRecieverID).child("isMsgReceived").setValue(true);
+
             FirebaseDatabase.getInstance().getReference()
                     .child("chats").push()
                     .setValue(chatDetails);
