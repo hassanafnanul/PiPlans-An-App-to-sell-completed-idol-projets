@@ -188,6 +188,7 @@ public class OnnoderProfile extends AppCompatActivity {
             intent.putExtra("senderName", currentUserName);
             intent.putExtra("ReceiverID", onnoderProfileKey);
             intent.putExtra("ReceiverName", fullName);
+            intent.putExtra("fromWhere", "OnnoderProfile");
             startActivity(intent);
         }
 

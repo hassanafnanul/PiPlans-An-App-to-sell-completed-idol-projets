@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     SearchView searchSV;
-    ImageView msgReceivedIV;
+    ImageView msgAseIV, msgNaiIV;
     boolean isMsgReceived = false;
 
 
@@ -58,7 +58,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         searchSV = findViewById(R.id.searchSvID);
-        msgReceivedIV = findViewById(R.id.msgReceivedID);
+        msgAseIV = findViewById(R.id.msgAseID);
+        msgNaiIV = findViewById(R.id.msgNaiID);
 
 
 
@@ -90,11 +91,13 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (isMsgReceived)
                 {
-                    msgReceivedIV.setVisibility(View.VISIBLE);
+                    msgAseIV.setVisibility(View.VISIBLE);
+                    msgNaiIV.setVisibility(View.INVISIBLE);
                 }
                 else
                 {
-                    msgReceivedIV.setVisibility(View.INVISIBLE);
+                    msgAseIV.setVisibility(View.INVISIBLE);
+                    msgNaiIV.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -250,9 +253,16 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(new Intent(this, CreateNewActivity.class));
     }
 
-    public void MsgReceived(View view)
+    public void MsgAse(View view)
     {
         //FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("isMsgReceived").setValue(false);
+        startActivity(new Intent(this, NewMessageChecker.class));
+    }
+
+    public void MsgNai(View view)
+    {
+        //FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("isMsgReceived").setValue(false);
+        startActivity(new Intent(this, AllMessageChecker.class));
     }
 
 
@@ -310,5 +320,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, HomeActivity.class));
+    }
 
 }

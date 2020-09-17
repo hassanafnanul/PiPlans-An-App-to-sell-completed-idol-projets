@@ -32,17 +32,38 @@
         </SearchView>
 
 
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/msgReceivedID"
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_height="match_parent">
+
+
+
+            <ImageView
+                android:id="@+id/msgNaiID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/msg_nai_pic"
+                android:onClick="MsgNai"
+                android:layout_alignParentRight="true"
+                android:layout_margin="3dp"
+                />
+
+
+            <ImageView
+            android:id="@+id/msgAseID"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/msg_received"
-            android:onClick="MsgReceived"
+            android:src="@drawable/msg_ase_pic"
+            android:onClick="MsgAse"
             android:layout_alignParentRight="true"
             android:layout_margin="3dp"
             />
+
+
+        </RelativeLayout>
+
+
 
 
         <ImageView

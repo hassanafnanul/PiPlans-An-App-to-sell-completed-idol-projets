@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewMessageChecker extends AppCompatActivity {
+public class AllMessageChecker extends AppCompatActivity {
 
 
     FirebaseAuth mAuth;
@@ -33,14 +33,14 @@ public class NewMessageChecker extends AppCompatActivity {
     //---------------------------------------------
 
 
-    private ListView receivedMessagesListView;
+    private ListView allMessagesListView;
     private List<UserInformation> messagesList;
     private List<String> sendersList;
     //private String[] sendersList;
     private ArrayAdapter<String> adapter;
     UserInformation userInformation;
 
-    int numberOfUnreadMessages = 0;
+
     String amarNam = "";
 
 
@@ -48,7 +48,7 @@ public class NewMessageChecker extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_message_checker);
+        setContentView(R.layout.activity_all_message_checker);
 
         progressBar = findViewById(R.id.progressBarID);
         progressBar.setVisibility(View.VISIBLE);
@@ -56,39 +56,34 @@ public class NewMessageChecker extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        receivedMessagesListView = findViewById(R.id.receivedMessagesListID);
+        allMessagesListView = findViewById(R.id.allMessagesListID);
         userInformation = new UserInformation();
         messagesList = new ArrayList<UserInformation>();
         sendersList = new ArrayList<String>();
-        databaseReference = FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("newMessageSender");
+        databaseReference = FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("allMessageSender");
 
 
 
 
-        receivedMessagesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        allMessagesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(sendersList.get(position).equals("No New Message"))
+
+                if(sendersList.get(position).equals("No Message"))
                 {
-                    Toast.makeText(NewMessageChecker.this, "No New Message", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AllMessageChecker.this, "No Message", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent intent = new Intent(NewMessageChecker.this, MessageActivity.class);
+
+                Intent intent = new Intent(AllMessageChecker.this, MessageActivity.class);
                 intent.putExtra("senderID", mAuth.getUid());
                 intent.putExtra("senderName", amarNam); //---------------------------------------Vul kora ase nam e----------------
                 intent.putExtra("ReceiverID", messagesList.get(position).memberKey);
                 intent.putExtra("ReceiverName", sendersList.get(position));
-                intent.putExtra("fromWhere", "NewMessageChecker");
+                intent.putExtra("fromWhere", "AllMessageChecker");
                 startActivity(intent);
 
-                databaseReference.child(messagesList.get(position).memberKey).removeValue();
-                numberOfUnreadMessages--;
-                if(numberOfUnreadMessages == 0)
-                {
-                    FirebaseDatabase.getInstance().getReference("UserList").child(mAuth.getUid()).child("isMsgReceived").setValue(false);
-                }
-
-                //Toast.makeText(NewMessageChecker.this, "Msg left: "+numberOfUnreadMessages, Toast.LENGTH_SHORT).show();
             }
 
 
@@ -135,14 +130,13 @@ public class NewMessageChecker extends AppCompatActivity {
                     sendersList.add(userInformation.getMemberName());
                 }
 
-                numberOfUnreadMessages = messagesList.size();
 
-                if(numberOfUnreadMessages == 0)
+                if(messagesList.size() == 0)
                 {
-                    sendersList.add("No New Message");
+                    sendersList.add("No Message");
                 }
 
-                receivedMessagesListView.setAdapter(adapter);
+                allMessagesListView.setAdapter(adapter);
 
             }
 
@@ -153,24 +147,9 @@ public class NewMessageChecker extends AppCompatActivity {
         });
 
 
-       // Toast.makeText(this, sendersList.toString(), Toast.LENGTH_SHORT).show();
-
-
-        /*Toast.makeText(NewMessageChecker.this, "Number Of Messages: "+messagesList.size(), Toast.LENGTH_SHORT).show();
-        sendersList = new String[messagesList.size()];
-
-        for(int i=0; i<messagesList.size(); i++)
-        {
-            sendersList[i] = messagesList.get(i).getMemberName();
-        }
-
-         */
-
-
-        adapter = new ArrayAdapter<String>(NewMessageChecker.this, R.layout.one_line_view, R.id.oneLineTextID, sendersList);
-
-
+        adapter = new ArrayAdapter<String>(AllMessageChecker.this, R.layout.one_line_view, R.id.oneLineTextID, sendersList);
         progressBar.setVisibility(View.INVISIBLE);
+
 
         super.onStart();
     }

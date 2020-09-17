@@ -353,4 +353,12 @@ public class CreateNewActivity extends AppCompatActivity {
 
         super.onStart();
     }
+
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+
 }

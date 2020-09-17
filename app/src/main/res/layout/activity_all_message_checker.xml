@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewMessageChecker"
+    tools:context=".AllMessageChecker"
     android:background="@drawable/background"
     android:gravity="center"
     >
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Messages"
+            android:text="All Messages"
             android:gravity="center_vertical"
             android:textSize="25sp"
             android:textColor="#000000"
@@ -45,7 +45,7 @@
 
 
         <ListView
-            android:id="@+id/receivedMessagesListID"
+            android:id="@+id/allMessagesListID"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="#55008577"
@@ -55,5 +55,6 @@
 
 
     </LinearLayout>
+
 
 </RelativeLayout>

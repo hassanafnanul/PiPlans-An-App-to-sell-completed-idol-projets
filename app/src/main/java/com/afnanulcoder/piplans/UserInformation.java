@@ -5,6 +5,9 @@ public class UserInformation
     String fullName, organisation, gender, age, eduDegree, country, skype, gitHub, email, numberOfProjects, numberOfProblems;
     boolean isMsgReceived;
 
+    public String memberName, memberKey;
+
+
     public UserInformation() {
     }
 
@@ -24,6 +27,10 @@ public class UserInformation
     }
 
 
+    public UserInformation(String memberName, String memberKey) {
+        this.memberName = memberName;
+        this.memberKey = memberKey;
+    }
 
     public String getFullName() {
         return fullName;
@@ -113,11 +120,27 @@ public class UserInformation
         this.numberOfProblems = numberOfProblems;
     }
 
-    public boolean isMsgReceived() {
+    public boolean getIsMsgReceived() {
         return isMsgReceived;
     }
 
-    public void setMsgReceived(boolean msgReceived) {
-        isMsgReceived = msgReceived;
+    public void setIsMsgReceived(boolean isMsgReceived) {
+        this.isMsgReceived = isMsgReceived;
+    }
+
+    public String getMemberName() {
+        return memberName;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public String getMemberKey() {
+        return memberKey;
+    }
+
+    public void setMemberKey(String memberKey) {
+        this.memberKey = memberKey;
     }
 }

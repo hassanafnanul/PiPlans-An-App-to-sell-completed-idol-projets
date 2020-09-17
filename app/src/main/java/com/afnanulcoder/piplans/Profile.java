@@ -281,10 +281,12 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+    }
 
 
-
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, HomeActivity.class));
     }
 
 

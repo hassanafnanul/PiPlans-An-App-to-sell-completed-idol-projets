@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     userNameET.setText("");
                     passwordET.setText("");
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+
                     intent.addFlags(    Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, "Log In Successful", Toast.LENGTH_SHORT).show();

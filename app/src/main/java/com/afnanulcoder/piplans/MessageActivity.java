@@ -33,6 +33,7 @@ public class MessageActivity extends AppCompatActivity {
     String theSender, theReceiver, theSenderID, theRecieverID;
     TextView receiverName;
     EditText theMessageTaker;
+    String fromWhere = "AllMessageChecker";
 
     //--------------------------------------
 
@@ -60,6 +61,7 @@ public class MessageActivity extends AppCompatActivity {
         theReceiver = getIntent().getStringExtra("ReceiverName");
         theSenderID = getIntent().getStringExtra("senderID");
         theRecieverID = getIntent().getStringExtra("ReceiverID");
+        fromWhere = getIntent().getStringExtra("fromWhere");
 
         //Toast.makeText(this, getIntent().getStringExtra("senderID")+".."+getIntent().getStringExtra("senderName")+".."+getIntent().getStringExtra("ReceiverID")+".."+getIntent().getStringExtra("ReceiverName"), Toast.LENGTH_SHORT).show();
 
@@ -147,6 +149,9 @@ public class MessageActivity extends AppCompatActivity {
             ChatDetails chatDetails = new ChatDetails(theSenderID, theSender, theRecieverID, theReceiver, theMessage);
 
             FirebaseDatabase.getInstance().getReference("UserList").child(theRecieverID).child("isMsgReceived").setValue(true);
+            FirebaseDatabase.getInstance().getReference("UserList").child(theRecieverID).child("newMessageSender").child(theSenderID).setValue(theSender);
+            FirebaseDatabase.getInstance().getReference("UserList").child(theRecieverID).child("allMessageSender").child(theSenderID).setValue(theSender);
+            FirebaseDatabase.getInstance().getReference("UserList").child(theSenderID).child("allMessageSender").child(theRecieverID).setValue(theReceiver);
 
             FirebaseDatabase.getInstance().getReference()
                     .child("chats").push()
@@ -188,5 +193,22 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
 
+        if(fromWhere.equals("NewMessageChecker"))
+        {
+            startActivity(new Intent(this, NewMessageChecker.class));
+        }
+        else if(fromWhere.equals("OnnoderProfile"))
+        {
+            super.onBackPressed();
+        }
+        else if(fromWhere.equals("AllMessageChecker"))
+        {
+            super.onBackPressed();
+        }
+
+
+    }
 }

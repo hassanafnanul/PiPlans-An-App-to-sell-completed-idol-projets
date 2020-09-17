@@ -8,11 +8,10 @@
         android:topLeftRadius="20dp"
         android:topRightRadius="0dp"/>
 
-    <stroke
-        android:color="@color/blue"
-        android:width="6dp"
 
-        android:dashGap="0dp"
-        android:dashWidth="50dp"/>
+
+    <solid
+        android:color="#883B3B8F"
+        />
 
 </shape>
